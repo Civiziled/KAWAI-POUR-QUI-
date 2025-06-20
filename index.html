@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Kawaii</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <!-- Test temporaire des images -->
+    <div style="position: fixed; top: 10px; right: 10px; background: white; padding: 10px; border: 2px solid red; z-index: 9999;">
+        <h4>Petit bug:</h4>
+        <img src="/images/animals/back.jpeg" alt="Test back" style="width: 50px; height: 50px; border: 1px solid black;">
+        <img src="/images/animals/bunny.jpeg" alt="Test bunny" style="width: 50px; height: 50px; border: 1px solid black;">
+        <p style="font-size: 12px; margin: 5px 0;">Si tu vois ces images, c'est bon sinon reload la fenêtre</p>
+    </div>
+
+    <!-- Écran de chargement kawaii -->
+    <div id="loadingScreen" class="screen active">
+        <div class="loading-hearts">
+            <span class="loading-heart">❤</span>
+            <span class="loading-heart">💛</span>
+            <span class="loading-heart">💚</span>
+        </div>
+        <div class="loading-content">
+            <img src="/images/animals/bunny.jpeg" class="loading-kawaii" alt="Lapin kawaii">
+            <img src="/images/animals/cat.jpeg" class="loading-kawaii" alt="Chat kawaii">
+            <img src="/images/animals/panda.jpeg" class="loading-kawaii" alt="Panda kawaii">
+            <h2 class="loading-title">Chargement du monde KAWAII...</h2>
+            <div class="loading-animation">
+                <span class="dot">｡◕‿◕｡</span>
+                <span class="dot">♡</span>
+                <span class="dot">(づ｡◕‿‿◕｡)づ</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Écran d'accueil -->
+    <div id="homeScreen" class="screen active">
+        <div class="home-content">
+            <img src="/images/logo.png" alt="Logo Memory" class="logo">
+            <div class="difficulty-selector">
+                <button class="difficulty-btn active" data-difficulty="easy">Facile (4x4)</button>
+                <button class="difficulty-btn" data-difficulty="medium">Moyen (6x6)</button>
+                <button class="difficulty-btn" data-difficulty="hard">Difficile (8x8)</button>
+            </div>
+            <button id="playButton" class="start-btn" aria-label="Jouer">
+                <img src="/images/start.png" alt="Jouer !" class="start-img">
+            </button>
+        </div>
+    </div>
+
+    <!-- Écran de jeu -->
+    <div id="gameScreen" class="screen">
+        <div class="game-header">
+            <div class="score-info">
+                <div class="moves">Coups: <span id="movesCount">0</span></div>
+                <div class="timer">Temps: <span id="timer">00:00</span></div>
+            </div>
+            <button id="homeButton" class="btn btn-secondary">Accueil</button>
+        </div>
+
+        <div id="gameBoard" class="game-board"></div>
+    </div>
+
+    <!-- Écran de victoire -->
+    <div id="winScreen" class="screen">
+        <div class="win-content">
+            <img src="/images/win.png" alt="Victoire" class="win-image">
+            <div class="final-stats">
+                <p>Coups: <span id="finalMoves">0</span></p>
+                <p>Temps: <span id="finalTime">00:00</span></p>
+            </div>
+            <button id="restartButton" class="btn btn-primary">
+                <img src="/images/restart.png" alt="Rejouer" style="width: 60px; height: 60px;">
+            </button>
+        </div>
+    </div>
+
+    <script src="src/main.js"></script>
+</body>
+</html>
